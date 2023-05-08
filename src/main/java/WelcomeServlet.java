@@ -15,4 +15,11 @@ public class WelcomeServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("<h2>Welcome, " + username + "!</h2>");
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+        out.println("<h2>Welcome to the GET method!<h2>");
+    }
 }
