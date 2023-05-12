@@ -10,6 +10,11 @@ public class LoginServlet extends HttpServlet {
             ServletException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-       if (username ==)
+       if (username == username && password == password) {
+            request.getSession().setAttribute("username", username);
+            response.sendRedirect("/profile");
+        } else {
+            response.sendRedirect("/login");
+        }
     }
     }
