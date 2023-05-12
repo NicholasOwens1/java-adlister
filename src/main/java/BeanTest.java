@@ -1,7 +1,20 @@
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import java.util.ArrayList;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-public class BeanTest {
-    public static void main(String[] args) {
+
+
+@WebServlet(name = "BeanTest", urlPatterns = "/bean")
+
+public class BeanTest extends HttpServlet {
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Album Thriller = new Album();
         Album PurpleRain = new Album();
         Album Bad = new Album();
@@ -15,8 +28,11 @@ public class BeanTest {
         quotes.add(q1);
         quotes.add(q2);
         quotes.add(q3);
+        q1.setAuthor("Mark Twain");
+        q2.setAuthor("RL Stine");
+        q3.setAuthor("Lemony Snickett");
         for (Quote quote : quotes) {
-            System.out.println(quote.getAuthor() + " said " + quote.getQuote());
+            System.out.println(quote.getAuthor());
         }
     }
 }
