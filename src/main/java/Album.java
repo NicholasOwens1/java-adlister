@@ -1,12 +1,23 @@
 import java.io.Serializable;
 
 public class Album implements Serializable {
+    public Album(){}
+
+    private int id;
     private String artist;
     private String name;
     private int release_date;
     private Float sales;
     private String genre;
-    public Album(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getArtist() {
         return artist;
