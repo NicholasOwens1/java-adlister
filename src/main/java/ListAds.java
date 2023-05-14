@@ -1,20 +1,9 @@
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAdsDao implements Ads {
+public class ListAds implements AdsDao {
 
-    public Ad adLooper() {
-        for (Ad ad : ads) {
-            System.out.println(ad);
-        }
-        return null;
-    }
-    private List<Ad> ads;
+    private List<Ad> ads = new ArrayList<>();
 
     public List<Ad> all() {
         if (ads == null) {
@@ -23,7 +12,12 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
-    private List<Ad> generateAds() {
+    @Override
+    public void insert(Ad ad) {
+
+    }
+
+    public List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(
                 1,

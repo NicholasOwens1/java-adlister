@@ -13,14 +13,6 @@
 <body>
 
 <h1>it works</h1>
-<form action="/looper" method="post">
-    <label for="name">Name</label>
-    <input name="name" id="name" type="text">
-    <br />
-    <label for="price">Price</label>
-    <input name="price" id="price" type="text">
-    <br />
-    <input type="submit">
-</form>
+
 </body>
 </html>

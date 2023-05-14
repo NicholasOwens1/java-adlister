@@ -14,14 +14,6 @@ import java.util.ListIterator;
 public class AdlistServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/ads/index.jsp").forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ListAdsDao listAdsDao = (ListAdsDao) DaoFactory.getAdsDao();
-        System.out.println("working");
-        req.setAttribute("ads", listAdsDao.all());
-        req.getRequestDispatcher("/ads/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }
