@@ -1,5 +1,4 @@
 package dao;
-
 import com.mysql.cj.jdbc.Driver;
 import com.mysql.cj.protocol.Resultset;
 import models.Author;
