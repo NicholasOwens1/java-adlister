@@ -12,7 +12,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String user = (String)session.getAttribute("isAdmin");
-        if (Objects.equals(user, "isAdmin")) {
+        if (!Objects.equals(user, "isAdmin")) {
             response.sendRedirect("/login");
         } else {
             request.getRequestDispatcher("/profile");
