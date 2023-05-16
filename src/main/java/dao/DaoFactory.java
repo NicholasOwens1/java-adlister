@@ -3,9 +3,9 @@ package dao;
 import dao.Ads;
 
 public class DaoFactory {
-    private static Ads adsDao;
+    private static AdsDao adsDao;
 
-    public static Ads getAdsDao() {
+    public static AdsDao getAdsDao() {
         if (adsDao == null) {
             adsDao = new ListAdsDao();
         }
