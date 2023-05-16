@@ -1,3 +1,5 @@
+package controllers;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,16 +9,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Objects;
 
-@WebServlet(name = "ViewProfileServlet", urlPatterns = "/profile")
+@WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        String user = (String) session.getAttribute("isAdmin");
-        if (!Objects.equals(user, "isAdmin")) {
+        if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
-        } else {
-            request.getRequestDispatcher("/profile");
-            request.getRequestDispatcher("/profile.jsp").forward(request, response);
+            return;
         }
+        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 }
